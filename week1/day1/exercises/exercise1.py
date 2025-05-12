@@ -1,1 +1,0 @@
-print("\n Hello word"*5)
