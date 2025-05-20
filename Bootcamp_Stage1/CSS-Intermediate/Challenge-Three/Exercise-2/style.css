@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: sans-serif;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .header {
+    height: 100px;
+    background-color: #28a745; /* Green */
+    margin-bottom: 20px;
+  }
+  
+  .image-row,
+  .color-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .image-row img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .box {
+    width: 200px;
+    height: 100px;
+  }
+  
+  .orange {
+    background-color: #ffa726;
+  }
+  
+  .red {
+    background-color: #ef5350;
+  }
+  
+  .blue {
+    background-color: #64b5f6;
+  }
+  

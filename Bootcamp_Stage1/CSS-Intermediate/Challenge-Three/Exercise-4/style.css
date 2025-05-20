@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .box {
+    height: 60px;
+    border-radius: 5px;
+    border-style: ridge;
+  }
+  
+  .red {
+    width: 60px;
+    background-color: lightcoral;
+  }
+  
+  .blue.large {
+    flex: 1;
+    background-color: lightskyblue;
+  }
+  
+  .yellow.full {
+    width: 100%;
+    height: 60px;
+    background-color: khaki;
+  }
+  
