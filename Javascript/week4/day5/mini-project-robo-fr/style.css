@@ -1,0 +1,156 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    font-family: 'VT323', monospace; /* Pixelated font for general text */
+    background: linear-gradient(to bottom right, #4CAF50, #2196F3); /* A green-blue gradient */
+    color: white;
+    text-align: center;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    position: relative; /* For the background pattern */
+}
+
+/* Subtle circuit board pattern for the body background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Using a simple SVG data URI for a circuit board pattern */
+    background-image: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" patternUnits="userSpaceOnUse" width="40" height="40"><path d="M 0 0 L 40 40 M 40 0 L 0 40" stroke="%233949AB" stroke-width="0.5" /></pattern></defs><rect x="0" y="0" width="100%" height="100%" fill="url(%23grid)"/></svg>');
+    opacity: 0.15; /* Make it subtle */
+    z-index: -1; /* Place behind other content */
+}
+
+/* Header Styling */
+.header {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2); /* Slightly transparent background */
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #64B5F6; /* Light blue border */
+}
+
+.header h1 {
+    font-family: 'Press Start 2P', cursive; /* Retro font for title */
+    color: #FFEB3B; /* Yellow color for title */
+    text-shadow: 3px 3px 6px rgba(255, 235, 59, 0.5); /* Glowing effect */
+    font-size: 3.5em;
+    margin: 0 0 25px 0;
+    letter-spacing: 2px;
+}
+
+#searchInput {
+    padding: 12px 20px;
+    width: clamp(250px, 60%, 400px); /* Responsive width */
+    border: 3px solid #FFEB3B; /* Yellow border */
+    border-radius: 8px;
+    background-color: #333;
+    color: #FFEB3B;
+    font-family: 'VT323', monospace;
+    font-size: 1.3em;
+    outline: none;
+    box-shadow: 0 0 15px rgba(255, 235, 59, 0.7); /* Glowing shadow */
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+#searchInput::placeholder {
+    color: #B2FF59; /* Lighter green for placeholder */
+    opacity: 0.8;
+}
+
+#searchInput:focus {
+    box-shadow: 0 0 20px rgba(255, 235, 59, 1), 0 0 30px rgba(255, 235, 59, 0.4);
+    transform: scale(1.02);
+    border-color: #FFEE58; /* Slightly brighter yellow on focus */
+}
+
+/* Card List Container */
+.card-list {
+    display: grid;
+    /* Responsive grid: minimum 280px wide columns, auto-fit to fill space */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 35px; /* Space between cards */
+    padding: 30px;
+    max-width: 1400px; /* Limit overall width */
+    margin: 0 auto; /* Center the grid */
+    justify-items: center; /* Center cards horizontally in their grid area */
+}
+
+/* Individual Card Styling */
+.card {
+    background-color: #3949AB; /* Dark blue background for cards */
+    border-radius: 20px; /* More rounded corners */
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+    width: 200px; /* Fixed width for consistency, adjusting for padding */
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* For pseudo-element background */
+    border: 2px solid #5C6BC0; /* Slight border */
+}
+
+/* Pseudo-element for inner card circuit pattern */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Another SVG data URI for inner card circuit pattern */
+    background-image: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="circuit-card" patternUnits="userSpaceOnUse" width="10" height="10"><path d="M 0 0 L 10 10 M 10 0 L 0 10" stroke="%234A59A8" stroke-width="0.5" /></pattern></defs><rect x="0" y="0" width="100%" height="100%" fill="url(%23circuit-card)"/></svg>');
+    opacity: 0.15; /* Make it subtle */
+    z-index: 0;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03); /* More pronounced lift and scale on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7); /* Darker, larger shadow */
+    border-color: #B388FF; /* Highlight border on hover */
+}
+
+.card img {
+    border-radius: 50%; /* Circular image */
+    border: 6px solid #FFD54F; /* Yellow border around image */
+    width: 160px; /* Image size */
+    height: 160px; /* Image size */
+    object-fit: cover; /* Ensure image covers the circle */
+    margin-bottom: 20px;
+    position: relative; /* To be above pseudo-element */
+    z-index: 1;
+    box-shadow: 0 0 15px rgba(255, 213, 79, 0.7); /* Image glow */
+}
+
+.card h2 {
+    font-size: 2em; /* Larger name font */
+    margin: 0 0 8px 0;
+    color: #E0E0E0; /* Off-white for names */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 1;
+}
+
+.card p {
+    font-size: 1.2em; /* Larger email font */
+    color: #BBDEFB; /* Lighter blue for emails */
+    position: relative;
+    z-index: 1;
+}
+
+/* No results message styling */
+.hidden {
+    display: none;
+}
+
+.no-results {
+    grid-column: 1 / -1; /* Span across all columns */
+    font-size: 2.5em;
+    color: #FFEB3B; /* Yellow text for no results */
+    margin-top: 50px;
+    text-shadow: 2px 2px 5px rgba(255, 235, 59, 0.5);
+}
