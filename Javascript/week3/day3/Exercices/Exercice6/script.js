@@ -1,22 +1,26 @@
-const navBar = document.getElementById("navBar");
-navBar.classList.remove("navBar");
-navBar.classList.add("socialNetworkNavigation");
+// Change the id from navBar to socialNetworkNavigation
+const navDiv = document.getElementById("navBar");
+navDiv.setAttribute("id", "socialNetworkNavigation");
 
+// Select the <ul> inside the div
+const ul = document.querySelector("#socialNetworkNavigation ul");
 
+// Create a new <li>
+const newLi = document.createElement("li");
 
-const li = document.createElement("li");
+// Create a new text node with "Logout"
+const logoutText = document.createTextNode("Logout");
 
+// Append the text to the <li>
+newLi.appendChild(logoutText);
 
-const textNode = document.createTextNode("Logout");
-li.appendChild(textNode);
+// Append the <li> to the <ul>
+ul.appendChild(newLi);
 
-const ul = document.querySelector("ul");
-ul.appendChild(li);
-
-
+// Get the first and last <li> elements
 const firstLi = ul.firstElementChild;
 const lastLi = ul.lastElementChild;
 
-
-console.log(firstLi.textContent);
-console.log(lastLi.textContent);
+// Display the text of each link
+console.log("First link text:", firstLi.textContent);
+console.log("Last link text:", lastLi.textContent);

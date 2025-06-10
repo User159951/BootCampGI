@@ -1,104 +1,90 @@
-// Exercise 4 :
-
 function hotelCost() {
-    const numberOfNights = prompt("How many nights will you stay?");
-    while (isNaN(numberOfNights)) {
-        numberOfNights = prompt("Please enter a valid number of nights:");
+    let nights;
+    const pricePerNight = 140;
+
+    
+    while (true) {
+        nights = prompt("How many nights would you like to stay in the hotel?");
+        nights = Number(nights);
+
+        if (!isNaN(nights) && nights > 0) {
+            break;
+        }
+        alert("Please enter a valid number of nights.");
     }
 
-    return numberOfNights * 140;
+    return nights * pricePerNight;
 }
+
+
+let totalHotelCost = hotelCost();
+console.log("Hotel total cost: $" + totalHotelCost);
+
 
 function planeRideCost() {
-    const destination = prompt("What is your destination?");
-    while (destination === "" || typeof destination !== "string") {
-        destination = prompt("Please enter a valid destination:");
+    let destination;
+
+    while (true) {
+        destination = prompt("What is your destination?");
+        if (destination && isNaN(destination)) {
+            break;
+        }
+        alert("Please enter a valid destination.");
     }
 
-    switch (destination.toLowerCase()) {
-        case "london":
-            return 183;
-        case "paris":
-            return 220;
-        default:
-            return 300;
+    destination = destination.trim().toLowerCase();
+
+    if (destination === "london") {
+        return 183;
+    } else if (destination === "paris") {
+        return 220;
+    } else {
+        return 300;
     }
 }
+
+
+let totalPlaneCost = planeRideCost();
+console.log("Plane ticket cost: $" + totalPlaneCost);
+
 
 function rentalCarCost() {
-    const numberofDays = prompt("How many days will you rent the car?");
-    while (isNaN(numberofDays) || numberofDays <= 0) {
-        numberofDays = prompt("Please enter a valid number of days:");
+    let days;
+
+
+    while (true) {
+        days = prompt("How many days would you like to rent the car?");
+        days = Number(days);
+        if (!isNaN(days) && days > 0) {
+            break;
+        }
+        alert("Please enter a valid number of days.");
     }
 
-    let totalCost = numberofDays * 40;
+    const dailyRate = 40;
+    let totalCost = days * dailyRate;
 
-    if(numberofDays > 10) {
-        totalCost = totalCost - totalCost * 5 / 100;
+    // Apply 5% discount for more than 10 days
+    if (days > 10) {
+        totalCost *= 0.95;
     }
 
-    return totalCost
+    return totalCost;
 }
 
-function totalVacationCost() {
-    const hCost = hotelCost();
-    const pCost = planeRideCost();
-    const rCost = rentalCarCost();
 
-    console.log(`The car cost: $${rCost}, the hotel cost: $${hCost}, the plane tickets cost: $${pCost}`)
-    return rCost + pCost + hCost;
+let totalRentalCost = rentalCarCost();
+console.log("Rental car cost: $" + totalRentalCost);
+
+finale
+function totalVacationCost(nights, destination, days) {
+    const hotel = hotelCost(nights);
+    const plane = planeRideCost(destination);
+    const car = rentalCarCost(days);
+    const total = hotel + plane + car;
+
+    console.log(`The hotel cost: $${hotel}`);
+    console.log(`The plane tickets cost: $${plane}`);
+    console.log(`The car rental cost: $${car}`);
+    console.log(`Total vacation cost: $${total}`);
 }
-
-totalVacationCost()
-
-
-
-const hotelCost = (numberOfNights) <= numberOfNights * 140;
-
-const planeRideCost = (destination) => {
-    switch (destination()) {
-        case "london":
-            return 183;
-        case "paris":
-            return 220;
-        default:
-            return 300;
-    }
-}
-
-const rentalCarCost = (numberofDays) => {
-    let totalCost = numberofDays * 40;
-
-    if(numberofDays > 10) {
-        totalCost = totalCost - totalCost * 5 / 100;
-    }
-
-    return totalCost
-}
-
-function totalVacationCost() {
-
-    const numberOfNights = prompt("How many nights will you stay?");
-    while (isNaN(numberOfNights) || numberOfNights <= 0) {
-        numberOfNights = prompt("Please enter a valid number of nights:");
-    }
-
-    const destination = prompt("What is your destination?");
-    while (destination === "" || typeof destination !== "string") {
-        destination = prompt("Please enter a valid destination:");
-    }
-
-    const numberofDays = prompt("How many days will you rent the car?");
-    while (isNaN(numberofDays) || numberofDays <= 0) {
-        numberofDays = prompt("Please enter a valid number of days:");
-    }
-    
-    const hCost = hotelCost(numberOfNights);
-    const pCost = planeRideCost(destination);
-    const rCost = rentalCarCost(numberofDays);
-
-    console.log(`The car cost: $${rCost}, the hotel cost: $${hCost}, the plane tickets cost: $${pCost}`)
-    return rCost + pCost + hCost;
-}
-
-totalVacationCost()

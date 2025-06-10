@@ -1,25 +1,15 @@
-// Exercise 3 :
-
 function changeEnough(itemPrice, amountOfChange) {
-    let totaleChage = 0;
-    for (let i=0; i < amountOfChange.length; i++) {
-        switch (i) {
-            case 0:
-                totaleChage = amountOfChange[i] * 0.25;
-                break;
-            case 1:
-                totaleChage = amountOfChange[i] * 0.10;
-                break;
-            case 2:
-                totaleChage = amountOfChange[i] * 0.05;
-                break;
-            case 3:
-                totaleChage = amountOfChange[i] * 0.01;
-                break;
-        }
+     const coinValues = [0.25, 0.10, 0.05, 0.01]; // quarters, dimes, nickels, pennies
+     let total = 0;
+
+     for (let i = 0; i < amountOfChange.length; i++) {
+         total += amountOfChange[i] * coinValues[i];
     }
 
-    return totaleChage >= itemPrice;
-}
+    return total >= itemPrice;
+ }
 
-changeEnough(4.25, [25, 20, 5, 0])
+
+console.log(changeEnough(4.25, [25, 20, 5, 0]));     
+console.log(changeEnough(14.11, [2, 100, 0, 0]));    
+console.log(changeEnough(0.75, [0, 0, 20, 5]));

@@ -1,33 +1,18 @@
-// Exercise 1 : 
+ function displayNumbersDivisible(divisor) {
+   let sum = 0;
+   let divisibleNumbers = [];
 
-function displayNumbersDivisible() {
-    isDivisible = "";
-    sum = 0;
-    for (let i = 0; i<= 500; i++) {
-        if (i / 23 === 0) {
-            isDivisible += i + " ";
-            sum += i;
-        }
-    }
+   for (let i = 0; i <= 500; i++) {
+     if (i % divisor === 0) {
+       divisibleNumbers.push(i);
+       sum += i;
+     }
+   }
 
-    console.log(`Outcome : ${isDivisible}`)
-    console.log(`Sum : ${sum}`)
-}
-displayNumbersDivisible();
+   console.log("Numbers divisible by", divisor + ":", divisibleNumbers.join(" "));
+   console.log("Sum:", sum);
+ }
 
 
-
-function displayNumbersDivisible(divisor) {
-    isDivisible = "";
-    sum = 0;
-    for (let i = 0; i <= 500; i++) {
-        if (i / divisor === 0) {
-            isDivisible += i + " ";
-            sum += i;
-        }
-    }
-
-    console.log(`Outcome : ${isDivisible}, Are divisible by ${divisor}`)
-    console.log(`Sum : ${sum}`)
-}
-displayNumbersDivisible(25);
+ displayNumbersDivisible(3);
+ displayNumbersDivisible(45);

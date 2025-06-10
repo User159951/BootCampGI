@@ -1,35 +1,26 @@
-allBooks = [
-    {
-        title : "Naruto, Vol. 67",
-        author : "Masashi Kishimoto",
-        image : "https://images.booksense.com/images/847/573/9781421573847.jpg",
-        alreadyRead : true,
-    },
-    {
-        title : "Naruto, Vol. 72",
-        author : "Masashi Kishimoto",
-        image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY1ZaVmkp8y8uBfESky3OesPArIJD9JLyP-A&s",
-        alreadyRead : false,
-    }
-];
+const section = document.querySelector(".listBooks");
 
-console.log(allBooks[0].title);
+allBooks.forEach(book => {
+  const bookDiv = document.createElement("div");
 
+  // Create book details
+  const bookInfo = document.createElement("p");
+  bookInfo.textContent = `${book.title} written by ${book.author}`;
 
+  // Set red color if already read
+  if (book.alreadyRead) {
+    bookInfo.style.color = "red";
+  }
 
-section = document.querySelector("section");
-for (let i = 0; i < allBooks.length; i++) {
-    const book = allBooks[i];
-    const div = document.createElement("div");
-    div.classList.add("book");
-    div.innerHTML = `<h2>${book.title} written by ${book.author}</h2>`;
-    const img = document.createElement("img");
-    img.src = book.image;
-    img.style.width = "100px";
-    div.appendChild(img);
-    section.appendChild(div);
+  // Create image element
+  const img = document.createElement("img");
+  img.src = book.image;
+  img.style.width = "100px";
 
-    if (book.alreadyRead) {
-        div.style.color = "red";
-    }
-}
+  // Append details to div
+  bookDiv.appendChild(bookInfo);
+  bookDiv.appendChild(img);
+
+  // Append div to section
+  section.appendChild(bookDiv);
+});
