@@ -1,0 +1,220 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #282c34; /* Dark background */
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #3a404b;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #5a626f;
+}
+
+h1 {
+    color: #61dafb; /* Light blue */
+    margin-bottom: 25px;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.game-area {
+    background-color: #4a505b;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #6c757d;
+}
+
+.emoji-display {
+    font-size: 8em; /* Large emoji */
+    margin: 20px 0;
+    line-height: 1;
+    cursor: default;
+}
+
+.options-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.option-btn {
+    background-color: #61dafb;
+    color: #282c34;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    min-width: 120px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.option-btn:hover {
+    background-color: #21a1f1;
+    transform: translateY(-2px);
+}
+
+.option-btn:active {
+    transform: translateY(0);
+}
+
+.feedback-message {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 15px;
+    min-height: 1.5em; /* Reserve space */
+}
+
+.correct {
+    color: #4CAF50; /* Green */
+}
+
+.incorrect {
+    color: #f44336; /* Red */
+}
+
+.score-display {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #a0a0a0;
+    margin-top: 15px;
+}
+
+.start-new-game-btn, .submit-score-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.start-new-game-btn:hover, .submit-score-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.leaderboard-area {
+    background-color: #4a505b;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 25px;
+    border: 1px solid #6c757d;
+}
+
+.leaderboard-area h2 {
+    color: #e0e0e0;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+#leaderboardList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #5a626f;
+    border-radius: 5px;
+    background-color: #3a404b;
+}
+
+#leaderboardList li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #4a505b;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+    color: #c0c0c0;
+}
+
+#leaderboardList li:last-child {
+    border-bottom: none;
+}
+
+#leaderboardList li span:first-child {
+    font-weight: bold;
+    color: #61dafb;
+}
+
+/* Modals */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #3a404b;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid #6c757d;
+}
+
+.modal-content h3 {
+    color: #61dafb;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.modal-content input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #6c757d;
+    border-radius: 5px;
+    background-color: #282c34;
+    color: #f0f0f0;
+    font-size: 1em;
+}
+
+.modal-content .option-btn {
+    margin: 5px;
+}
+
+.modal-content .close-btn {
+    background-color: #f44336;
+}
+
+.modal-content .close-btn:hover {
+    background-color: #da190b;
+}
+
+.hidden {
+    display: none !important;
+}

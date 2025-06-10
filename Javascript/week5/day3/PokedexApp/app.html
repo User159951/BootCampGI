@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex App</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+      body {
+        font-family: "Press Start 2P", system-ui;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .img-container {
+        position: absolute;
+        width: 70vh;
+        height: 50vh;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .img-container > img {
+        width: 100%;
+        height: 100%;
+      }
+      .error {
+        width: 90%;
+        color: rgb(255, 113, 113);
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%);
+        left: 50%;
+        font-size: 12px;
+      }
+      .left-right-buttons {
+        position: absolute;
+        top: 36.5vh;
+        left: 11.4vh;
+      }
+      .left-right-buttons button {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        width: 39px;
+        height: 20px;
+      }
+      .green-button {
+        position: absolute;
+        top: 34.8vh;
+        left: 57.5vh;
+        width: 5.5vh;
+        height: 5.5vh;
+        border-radius: 100%;
+        cursor: pointer;
+      }
+      .slider {
+        position: absolute;
+        width: 23vh;
+        height: 17vh;
+        left: 23vh;
+        top: 3.5vh;
+      }
+      .slider img {
+        width: 100%;
+        height: 100%;
+      }
+      .details {
+        position: absolute;
+        width: 23vh;
+        height: 15vh;
+        left: 23vh;
+        top: 29.6vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0px;
+        gap: 10px;
+        font-size: 12px;
+      }
+      .details h1 {
+        font: bold;
+        margin: 0;
+      }
+      .details p {
+        margin: 0;
+      }
+      .how{
+        position: absolute;
+        top: 2vh;
+        left: 80%;
+        width:40vh;
+      }
+      .how h1{
+        font-size: 12px;
+        font-weight: bold;
+
+      }
+      .how p{
+        font-size: 12px;
+        line-height: 1.6;
+      }
+      .how p span{
+        font-weight:bolder;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./assets/logo.png" alt="" />
+    <div class="img-container">
+      <div class="slider">
+        <img id="display" alt="" />
+        <div class="error"></div>
+      </div>
+      <img src="./assets/pokedex.png" alt="" />
+      <div class="left-right-buttons">
+        <button id="prev"></button>
+        <button id="next"></button>
+      </div>
+      <div class="details"></div>
+      <div class="green-button"></div>
+      <div class="how">
+        <h1>How to use:</h1>
+        <p>1- Press the <span>green</span> button to get a random Pokémon</p>
+        <p>2- Press the <span>left</span> and <span>right</span> buttons to see previous and next Pokémon.</p>
+      </div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>

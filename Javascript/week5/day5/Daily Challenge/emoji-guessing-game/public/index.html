@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Emoji Guessing Game!</h1>
+
+        <div class="game-area">
+            <p class="emoji-display" id="emojiDisplay">❓</p>
+            <div class="options-container" id="optionsContainer">
+                <!-- Options buttons will be injected here by script.js -->
+                <button class="option-btn" data-name="Loading..." disabled>Loading...</button>
+            </div>
+            <p class="feedback-message" id="feedbackMessage"></p>
+            <p class="score-display">Score: <span id="scoreDisplay">0</span> / <span id="totalGuessesDisplay">0</span></p>
+            <button class="start-new-game-btn" id="startNewGameBtn">Restart Game</button>
+        </div>
+
+        <div class="leaderboard-area">
+            <h2>Leaderboard</h2>
+            <ul id="leaderboardList">
+                <li>Loading leaderboard...</li>
+            </ul>
+            <button class="submit-score-btn" id="submitScoreBtn">Submit Score</button>
+        </div>
+
+        <!-- Modals for input/messages -->
+        <div id="submitScoreModal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Submit Your Score</h3>
+                <input type="text" id="playerNameInput" placeholder="Your Name" maxlength="15" required>
+                <button id="submitScoreConfirmBtn" class="option-btn">Submit</button>
+                <button id="submitScoreCancelBtn" class="option-btn close-btn">Cancel</button>
+            </div>
+        </div>
+
+        <div id="feedbackModal" class="modal hidden">
+            <div class="modal-content">
+                <h3 id="feedbackModalTitle"></h3>
+                <p id="feedbackModalMessage"></p>
+                <button id="feedbackModalNextBtn" class="option-btn close-btn">Next Emoji</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
